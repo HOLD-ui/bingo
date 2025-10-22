@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GLIDER BINGO - Overlay on PNG</title>
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: 48px;
+      color: #00ff9d;
+      margin: 0 0 12px;
+      font-weight: bold;
+      line-height: 1.1;
+    }
+    .invite-link {
+      color: #d3e0db;
+      text-decoration: none;
+      font-size: 25px;
+    }
+    .invite-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Conteneur flexible : image à gauche + canvas à droite */
+    .bingo-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .side-image {
+      width: 600px;
+      height:200px;
+      object-fit: contain; /* ou "contain" si vous voulez garder les proportions */
+      background: #000;
+      border: 1px solid #00ff9d;
+      box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+    }
+
+    canvas {
+      border: 2px solid #00ff9d;
+      box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+    }
+
+    .controls {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 20px 20px;
+      margin: 5px;
+      background: #00ff9d;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #00cc7a;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-section">
+    <div class="tagline">Join the future of automated portfolio : </div>
+    <a href="https://glider.fi/?invite=683849e3" target="_blank" class="invite-link">https://glider.fi/?invite=683849e3</a>
+  </div>
+
+  <h1>🦇 GLIDER BINGO 🦇</h1>
+  
+  
+  <!-- Conteneur avec image + canvas -->
+  <div class="bingo-container">
+  </div>
+  <div class="controls">
+    <button onclick="generateRandomNumbers()">Draw 24 random numbers</button>
+    <button onclick="clearGrid()">Clear all</button>
+    <button onclick="exportPNG()">Export as PNG</button>
+  </div>
+    <img src="sidebar.png" alt="Side banner" class="side-image" />
+    <canvas id="bingoCanvas"></canvas>
+    
+  
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
